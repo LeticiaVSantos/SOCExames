@@ -38,7 +38,7 @@ import javax.xml.bind.annotation.XmlTransient;
     @NamedQuery(name = "Paciente.findByNome", query = "SELECT p FROM Paciente p WHERE p.nome = :nome"),
     @NamedQuery(name = "Paciente.findByDataNasc", query = "SELECT p FROM Paciente p WHERE p.dataNasc = :dataNasc"),
     @NamedQuery(name = "Paciente.findByLogradouro", query = "SELECT p FROM Paciente p WHERE p.logradouro = :logradouro"),
-    @NamedQuery(name = "Paciente.findByNumero", query = "SELECT p FROM Paciente p WHERE p.numero = :numero"),
+    @NamedQuery(name = "Paciente.findByNr_endereco", query = "SELECT p FROM Paciente p WHERE p.nr_endereco = :nr_endereco"),
     @NamedQuery(name = "Paciente.findByBairro", query = "SELECT p FROM Paciente p WHERE p.bairro = :bairro"),
     @NamedQuery(name = "Paciente.findByCidade", query = "SELECT p FROM Paciente p WHERE p.cidade = :cidade"),
     @NamedQuery(name = "Paciente.findByUf", query = "SELECT p FROM Paciente p WHERE p.uf = :uf")})
@@ -63,8 +63,8 @@ public class Paciente implements Serializable {
     @Column(name = "logradouro")
     private String logradouro;
     @Size(max = 10)
-    @Column(name = "numero")
-    private String numero;
+    @Column(name = "nr_endereco")
+    private String nr_endereco;
     @Size(max = 60)
     @Column(name = "bairro")
     private String bairro;
@@ -122,12 +122,12 @@ public class Paciente implements Serializable {
         this.logradouro = logradouro;
     }
 
-    public String getNumero() {
-        return numero;
+    public String getNr_endereco(){
+        return nr_endereco;
     }
 
-    public void setNumero(String numero) {
-        this.numero = numero;
+    public void setNr_endereco(String nr_endereco) {
+        this.nr_endereco = nr_endereco;
     }
 
     public String getBairro() {

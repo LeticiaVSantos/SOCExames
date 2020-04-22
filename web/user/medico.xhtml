@@ -6,6 +6,7 @@
       xmlns:f="http://java.sun.com/jsf/core">
     <ui:composition template="/template/template.html">
         <ui:define name="conteudo">
+            <br/>
             <div class="container well">
                 <div>
                     <h2>Médico</h2>
@@ -36,9 +37,9 @@
                                 </fieldset>
                                 <div class="control-group">
                                     <div class="controls">
-                                        <h:commandButton value="Limpar" type="reset" styleClass="btn"/>
+                                        <h:commandButton value="Limpar" type="reset" styleClass="btn btn-danger"/>
                                         <h:outputText value=" "/> 
-                                        <h:commandButton styleClass="btn" action="#{MedicoController.salvar}" value="Cadastrar"/>
+                                        <h:commandButton styleClass="btn btn-success" action="#{MedicoController.salvar}" value="Cadastrar"/>
                                         <br /><br />
                                         <h:message errorClass="error" for="form_cadastro_medico" styleClass="alert alert-error" />
                                     </div>
@@ -74,7 +75,7 @@
                                         <h:column headerClass="coluna_vazia">
                                             <f:facet name="header">
                                             </f:facet>
-                                            <h:commandLink styleClass="btn btn-small" action="#{MedicoController.alterarDados(med.medico)}" value="Editar"/>
+                                            <h:commandLink styleClass="btn btn-primary btn-small" action="#{MedicoController.alterarDados(med.medico)}" value="Editar"/>
                                         </h:column>
 
                                         <h:column headerClass="coluna_vazia">

@@ -6,6 +6,7 @@
       xmlns:f="http://java.sun.com/jsf/core">
     <ui:composition template="/template/template.html">
         <ui:define name="conteudo">
+            <br/>
             <div class="container well">
                 <div>
                     <h2>Paciente</h2>
@@ -42,9 +43,9 @@
                                         </div>
                                     </div>
                                     <div class="control-group">
-                                        <label class="control-label" for="form_cadastro_paciente:numero">Número: </label>
+                                        <label class="control-label" for="form_cadastro_paciente:nr_endereco">Número: </label>
                                         <div class="controls">
-                                            <h:inputText value="#{PacienteController.paciente.numero}" id="numero" maxlength="10" /> <h:message for="numero" styleClass="alert alert-error" />
+                                            <h:inputText value="#{PacienteController.paciente.nr_endereco}" id="nr_endereco" maxlength="10" /> <h:message for="nr_endereco" styleClass="alert alert-error" />
                                         </div>
                                     </div>
                                     <div class="control-group">
@@ -98,9 +99,9 @@
                                 </fieldset>
                                 <div class="control-group">
                                     <div class="controls">
-                                        <h:commandButton value="Limpar" type="reset" styleClass="btn"/>
+                                        <h:commandButton value="Limpar" type="reset" styleClass="btn btn-danger"/>
                                         <h:outputText value=" "/> 
-                                        <h:commandButton styleClass="btn" action="#{PacienteController.salvar}" value="Cadastrar"/> 
+                                        <h:commandButton styleClass="btn btn-success" action="#{PacienteController.salvar}" value="Cadastrar"/> 
                                         <br /><br />
                                         <h:message errorClass="error" for="form_cadastro_paciente" styleClass="alert alert-error" />
                                     </div>
@@ -160,7 +161,7 @@
                                             <f:facet name="header">
                                                 <h:outputText value="Número"/>
                                             </f:facet>
-                                            <h:outputText value="#{pac.paciente.numero}" />
+                                            <h:outputText value="#{pac.paciente.nr_endereco}" />
                                         </h:column>
                                         
                                         <h:column>
@@ -173,7 +174,7 @@
                                         <h:column headerClass="coluna_vazia">
                                             <f:facet name="header">
                                             </f:facet>
-                                            <h:commandLink styleClass="btn btn-small" action="#{PacienteController.alterarDados(pac.paciente)}" value="Editar"/>
+                                            <h:commandLink styleClass="btn btn-primary btn-small" action="#{PacienteController.alterarDados(pac.paciente)}" value="Editar"/>
                                         </h:column>
 
                                         <h:column headerClass="coluna_vazia">
@@ -206,7 +207,7 @@
                     add_atributo_form("form_cadastro_paciente", "nome", "placeholder", "Digite o nome");
                     add_atributo_form("form_cadastro_paciente", "data_nascimento", "placeholder", "dd/mm/aaaa");
                     add_atributo_form("form_cadastro_paciente", "logradouro", "placeholder", "Digite o logradouro");
-                    add_atributo_form("form_cadastro_paciente", "numero", "placeholder", "Digite o número");
+                    add_atributo_form("form_cadastro_paciente", "nr_endereco", "placeholder", "Digite o número");
                     add_atributo_form("form_cadastro_paciente", "bairro", "placeholder", "Digite o bairro");
                     add_atributo_form("form_cadastro_paciente", "cidade", "placeholder", "Digite a cidade");
                 });

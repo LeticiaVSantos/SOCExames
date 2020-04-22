@@ -91,7 +91,7 @@ public class PacienteDAO implements InterfaceDAO<Paciente, Integer> {
             pac.setCidade(objeto.getCidade());
             pac.setDataNasc(objeto.getDataNasc());
             pac.setLogradouro(objeto.getLogradouro());
-            pac.setNumero(objeto.getNumero());
+            pac.setNr_endereco(objeto.getNr_endereco());
             pac.setUf(objeto.getUf());
             
             if(pac != null){

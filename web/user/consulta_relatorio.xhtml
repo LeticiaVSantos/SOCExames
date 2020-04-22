@@ -6,6 +6,7 @@
       xmlns:f="http://java.sun.com/jsf/core">
     <ui:composition template="/template/template.html">
         <ui:define name="conteudo">
+            <br/>
             <h:form id="form_consulta_relatorio" styleClass="form-horizontal">
                 <fieldset>
                     <legend>Consulta Relatório</legend>
@@ -28,9 +29,9 @@
                 </fieldset>
                 <div class="control-group">
                     <div class="controls">
-                        <h:commandButton value="Limpar" type="reset" styleClass="btn"/>
+                        <h:commandButton value="Limpar" type="reset" styleClass="btn btn-danger"/>
                         <h:outputText value=" "/> 
-                        <h:commandButton styleClass="btn" action="#{RelatorioController.consultar}" value="Consultar"/>
+                        <h:commandButton styleClass="btn btn-success" action="#{RelatorioController.consultar}" value="Consultar"/>
                     </div>
                 </div>
             </h:form>
