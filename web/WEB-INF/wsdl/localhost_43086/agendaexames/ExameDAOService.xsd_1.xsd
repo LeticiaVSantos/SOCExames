@@ -1,0 +1,90 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI (http://jax-ws.java.net). RI's version is Metro/2.3.2-b608 (trunk-7979; 2015-01-21T12:50:19+0000) JAXWS-RI/2.2.11-b150120.1832 JAXWS-API/2.2.12 JAXB-RI/2.2.12-b141219.1637 JAXB-API/2.2.13-b141020.1521 svn-revision#unknown. --><xs:schema xmlns:tns="http://dao.exames.com.br/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://dao.exames.com.br/">
+
+<xs:element name="alterar" type="tns:alterar"/>
+
+<xs:element name="alterarResponse" type="tns:alterarResponse"/>
+
+<xs:element name="consultar" type="tns:consultar"/>
+
+<xs:element name="consultarResponse" type="tns:consultarResponse"/>
+
+<xs:element name="exame" type="tns:exame"/>
+
+<xs:element name="excluir" type="tns:excluir"/>
+
+<xs:element name="excluirResponse" type="tns:excluirResponse"/>
+
+<xs:element name="findAll" type="tns:findAll"/>
+
+<xs:element name="findAllResponse" type="tns:findAllResponse"/>
+
+<xs:element name="salvar" type="tns:salvar"/>
+
+<xs:element name="salvarResponse" type="tns:salvarResponse"/>
+
+<xs:complexType name="excluir">
+<xs:sequence>
+<xs:element name="arg0" type="tns:exame" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="exame">
+<xs:sequence>
+<xs:element name="idExame" type="xs:int" minOccurs="0"/>
+<xs:element name="nome" type="xs:string" minOccurs="0"/>
+<xs:element name="valor" type="xs:float"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="excluirResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="consultar">
+<xs:sequence>
+<xs:element name="arg0" type="xs:anyType" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="consultarResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:anyType" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="findAll">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="findAllResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:exame" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="alterar">
+<xs:sequence>
+<xs:element name="arg0" type="tns:exame" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="alterarResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="salvar">
+<xs:sequence>
+<xs:element name="arg0" type="tns:exame" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="salvarResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean"/>
+</xs:sequence>
+</xs:complexType>
+</xs:schema>

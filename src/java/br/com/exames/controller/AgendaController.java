@@ -17,7 +17,7 @@ import javax.faces.model.ListDataModel;
 
 /**
  *
- * @author Letícia Santos
+ * @author Leticia Santos
  */
 public class AgendaController implements IControllerDAO<AgendaController, AgendaPK> {
 

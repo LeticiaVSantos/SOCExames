@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+ <definitions 
+ xmlns="http://schemas.xmlsoap.org/wsdl/" 
+ xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" 
+ xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
+ xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" name="ExameDAOService" targetNamespace="http://dao.exames.com.br/" xmlns:tns="http://dao.exames.com.br/" xmlns:wsp="http://www.w3.org/ns/ws-policy" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:fi="http://java.sun.com/xml/ns/wsit/2006/09/policy/fastinfoset/service" xmlns:tcp="http://java.sun.com/xml/ns/wsit/2006/09/policy/soaptcp/service" 
+ >
+    <message name="salvar"/>
+    <message name="salvarResponse"/>
+    <message name="findAll"/>
+    <message name="findAllResponse"/>
+    <message name="consultar"/>
+    <message name="consultarResponse"/>
+    <message name="alterar"/>
+    <message name="alterarResponse"/>
+    <message name="excluir"/>
+    <message name="excluirResponse"/>
+    <portType name="ExameDAO">
+        <operation name="salvar">
+            <input message="tns:salvar"/>
+            <output message="tns:salvarResponse"/>
+        </operation>
+        <operation name="findAll">
+            <input message="tns:findAll"/>
+            <output message="tns:findAllResponse"/>
+        </operation>
+        <operation name="consultar">
+            <input message="tns:consultar"/>
+            <output message="tns:consultarResponse"/>
+        </operation>
+        <operation name="alterar">
+            <input message="tns:alterar"/>
+            <output message="tns:alterarResponse"/>
+        </operation>
+        <operation name="excluir">
+            <input message="tns:excluir"/>
+            <output message="tns:excluirResponse"/>
+        </operation>
+    </portType>
+    <binding name="ExameDAOPortBinding" type="tns:ExameDAO">
+        <wsp:PolicyReference URI="#ExameDAOPortBindingPolicy"/>
+        <operation name="salvar">
+            <input/>
+            <output/>
+        </operation>
+        <operation name="findAll">
+            <input/>
+            <output/>
+        </operation>
+        <operation name="consultar">
+            <input/>
+            <output/>
+        </operation>
+        <operation name="alterar">
+            <input/>
+            <output/>
+        </operation>
+        <operation name="excluir">
+            <input/>
+            <output/>
+        </operation>
+    </binding>
+    <service name="ExameDAOService">
+        <port name="ExameDAOPort" binding="tns:ExameDAOPortBinding"/>
+    </service>
+    <wsp:Policy wsu:Id="ExameDAOPortBindingPolicy">
+        <wsp:ExactlyOne>
+            <wsp:All/>
+        </wsp:ExactlyOne>
+    </wsp:Policy>
+</definitions>

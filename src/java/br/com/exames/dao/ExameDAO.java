@@ -7,6 +7,8 @@ package br.com.exames.dao;
 import br.com.exames.model.Exame;
 import br.com.exames.util.ConexaoBD;
 import java.util.List;
+import javax.jws.WebService;
+import org.hibernate.HibernateException;
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
@@ -15,6 +17,7 @@ import org.hibernate.Transaction;
  *
  * @author Letícia Santos
  */
+@WebService
 public class ExameDAO implements InterfaceDAO<Exame, Integer> {
 
     private Session session;
@@ -30,7 +33,7 @@ public class ExameDAO implements InterfaceDAO<Exame, Integer> {
             transacao.commit();
             return true;
         }
-        catch (Exception e) {
+        catch (HibernateException e) {
             System.out.println("Erro: " + e.getMessage());
             if(transacao.isActive()){
                 transacao.rollback();
@@ -52,7 +55,7 @@ public class ExameDAO implements InterfaceDAO<Exame, Integer> {
   
             return exames;
         }
-        catch(Exception e){
+        catch(HibernateException e){
             System.out.println("Erro: " + e.getMessage());
             return null;
         }
@@ -69,7 +72,7 @@ public class ExameDAO implements InterfaceDAO<Exame, Integer> {
         try {
             exa = (Exame)session.get(Exame.class, chave); 
         }
-        catch (Exception e) {
+        catch (HibernateException e) {
             System.out.println("Erro: " + e.getMessage());
         }
         finally{
@@ -96,7 +99,7 @@ public class ExameDAO implements InterfaceDAO<Exame, Integer> {
                 return true;
             }
         }
-        catch (Exception e) {
+        catch (HibernateException e) {
             System.out.println("Erro: " + e.getMessage());
             if(transacao.isActive()){
                 transacao.rollback();
@@ -119,7 +122,7 @@ public class ExameDAO implements InterfaceDAO<Exame, Integer> {
             transacao.commit();
             return true;
         }
-        catch (Exception e) {
+        catch (HibernateException e) {
             System.out.println("Erro: " + e.getMessage());
             if(transacao.isActive()){
                 transacao.rollback();
